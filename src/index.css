@@ -1,56 +1,85 @@
 @import "tailwindcss";
 
 /*
-  Design tokens — extracted from the Figma file (Pro-Playground → Tiny WebP Project → Website).
-  Tier 1 (primitives) feed Tier 2 (semantic aliases) below, so components should reference the
-  semantic names (bg, text-primary, accent, etc.) rather than the raw scale where possible.
+  Design tokens — synced from Figma (Pro-Playground → Tiny WebP Project → Website).
+  Colors: "Primitives" + "Semantic" variable collections.
+  Type: the 8 Text Style groups (Title 1/2/3, Body Large/Small, Button Label, Caption, Price Display).
+  Tier 1 (primitives) feed Tier 2 (semantic aliases) — components should reference semantic names.
 */
 @theme {
-  /* Tier 1 — primitives */
-  --color-gray-950: #0a0b0d;
-  --color-gray-900: #131518;
-  --color-gray-800: #292b33;
-  --color-gray-500: #6b727e;
-  --color-gray-400: #a1a7b1;
-  --color-white: #f5f7f8;
+  /* ---- Color primitives ---- */
+  --color-neutral-950: #171717;
+  --color-neutral-900: #1c1c1c;
+  --color-neutral-850: #222222;
+  --color-neutral-800: #252525;
+  --color-neutral-750: #303030;
+  --color-white: #ffffff;
   --color-teal-400: #2dd4bf;
+  --color-green-500: #34c759;
+  --color-yellow-400: #ffcc00;
+  --color-orange-400: #ff8d28;
+  --color-pink-500: #ff2d55;
 
-  /* Tier 2 — semantic aliases (use these in components) */
-  --color-bg: var(--color-gray-950);
-  --color-surface: var(--color-gray-900);
-  --color-border: var(--color-gray-800);
-  --color-text-primary: var(--color-white);
-  --color-text-secondary: var(--color-gray-400);
-  --color-text-muted: var(--color-gray-500);
-  --color-accent: var(--color-teal-400);
+  /* ---- Color semantics (use these in components) ---- */
+  --color-bg-primary: var(--color-neutral-950);
+  --color-bg-secondary: var(--color-neutral-900);
+  --color-bg-tertiary: var(--color-neutral-800);
+  --color-surface-primary: var(--color-neutral-950);
+  --color-surface-secondary: var(--color-neutral-850);
+  --color-surface-tertiary: var(--color-neutral-750);
+  --color-accent-default: var(--color-teal-400);
+  --color-accent-success: var(--color-green-500);
+  --color-accent-warning: var(--color-yellow-400);
+  --color-accent-highlight: var(--color-orange-400);
+  --color-accent-danger: var(--color-pink-500);
+  /* Opacity is part of these values on purpose — see project notes on text-token tiering */
+  --color-text-primary: rgb(255 255 255 / 90%);
+  --color-text-secondary: rgb(255 255 255 / 60%);
+  --color-text-muted: rgb(255 255 255 / 40%);
 
-  /* Type scale, named after where each size is used */
-  --text-hero-xl: 5rem; /* 80px — bold hero variant */
-  --text-display: 3.75rem; /* 60px — hero H1 */
-  --text-heading-xl: 2.5rem; /* 40px — CTA/open-source headings */
-  --text-heading-lg: 2.125rem; /* 34px — section headings */
-  --text-heading-md: 1.625rem; /* 26px — feature card headings */
-  --text-body-lg: 1.25rem; /* 20px — taglines */
-  --text-body: 1rem; /* 16px */
-  --text-small: 0.875rem; /* 14px */
-  --text-tiny: 0.8125rem; /* 13px */
-  --text-eyebrow: 0.75rem; /* 12px */
-
-  /* Radii */
-  --radius-button: 0.75rem; /* 12px */
-  --radius-card-sm: 1rem; /* 16px */
-  --radius-card-md: 1.25rem; /* 20px */
-  --radius-card-lg: 1.5rem; /* 24px */
-  --radius-bento: 2.5rem; /* 40px */
-
-  /* Real system font — Figma mockups used Inter as an SF Pro stand-in (Figma can't render
-     licensed SF Pro), but the actual site should resolve to true SF Pro on a Mac. */
+  /* ---- Fonts ---- */
+  /* Real system fonts — resolve to true SF Pro / SF Mono on a Mac; Figma's own preview
+     used stand-ins (Inter / JetBrains Mono) since it can't load either remotely. */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 590; /* Apple's actual variable-font semibold weight, not 600 */
+  --font-weight-bold: 700;
+
+  /* ---- Text styles ---- */
+  /* Named to match Figma's Text Styles panel exactly. Font-size + line-height only —
+     pair with font-mono for Caption/Price Display, and font-normal/font-semibold/font-bold
+     for weight, same as Figma's Regular/Semibold(or Bold) variants per style. */
+  --text-title-1: 3.75rem; /* 60px — Hero H1 only, always font-bold */
+  --text-title-1--line-height: 1.1;
+  --text-title-2: 3rem; /* 48px — section headings */
+  --text-title-2--line-height: 1.2;
+  --text-title-3: 1.25rem; /* 20px — card headings */
+  --text-title-3--line-height: 1.4;
+  --text-body-lg: 1rem; /* 16px */
+  --text-body-lg--line-height: 1.5;
+  --text-body-sm: 0.875rem; /* 14px */
+  --text-body-sm--line-height: 1.4;
+  --text-button-label: 1rem; /* 16px */
+  --text-button-label--line-height: 1.15;
+  --text-caption: 0.8125rem; /* 13px — pair with font-mono */
+  --text-caption--line-height: 1.2;
+  --text-price-display: 5.25rem; /* 84px — pair with font-mono */
+  --text-price-display--line-height: 1.1;
+
+  /* ---- Radii ---- */
+  /* Not yet formalized as Figma variables — set from observed real usage across sections. */
+  --radius-button: 1rem; /* 16px — default button size */
+  --radius-button-sm: 0.75rem; /* 12px — compact button size (nav) */
+  --radius-card-sm: 0.75rem; /* 12px — inline settings-panel style mockups */
+  --radius-card-lg: 2.5rem; /* 40px — bento cards, pricing card, nav pill, second CTA */
+  --radius-icon: 1.625rem; /* 26px — app icon */
 }
 
 body {
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
 }
@@ -74,5 +103,30 @@ body {
 @media (max-width: 640px) {
   .wrap {
     padding-inline: 24px;
+  }
+}
+
+/*
+  Button gradients — kept as real CSS rather than Tailwind utilities because the hover
+  state layers a second flat-white-wash gradient on top of the base one (see Figma
+  "Buttons" reference, node 429:384 — Primary Hover / Secondary Hover).
+*/
+@layer components {
+  .btn-primary {
+    background-image: linear-gradient(180deg, rgb(255 255 255) 50.003%, rgb(173 173 173) 100%);
+  }
+  .btn-primary:hover {
+    background-image:
+      linear-gradient(90deg, rgb(255 255 255 / 50%) 0%, rgb(255 255 255 / 50%) 100%),
+      linear-gradient(180deg, rgb(255 255 255) 50.003%, rgb(173 173 173) 100%);
+  }
+
+  .btn-secondary {
+    background-image: linear-gradient(180deg, rgb(31 31 31) 0%, rgb(23 23 23) 100%);
+  }
+  .btn-secondary:hover {
+    background-image:
+      linear-gradient(90deg, rgb(255 255 255 / 5%) 0%, rgb(255 255 255 / 5%) 100%),
+      linear-gradient(180deg, rgb(31 31 31) 0%, rgb(23 23 23) 100%);
   }
 }
