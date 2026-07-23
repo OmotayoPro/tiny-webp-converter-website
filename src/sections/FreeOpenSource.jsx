@@ -23,7 +23,7 @@ export function FreeOpenSource() {
     <section id="pricing" className="bg-bg-primary px-6 py-16 lg:px-20 lg:py-[120px]">
       <div className="wrap flex flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4 text-center">
-          <p className="text-caption font-mono font-semibold text-accent-default">PRICING</p>
+          <p className="text-caption font-mono text-accent-default">PRICING</p>
           <h2 className="text-[28px] leading-[1.2] font-semibold text-text-primary sm:text-[36px] lg:text-title-2">
             This is not another
             <br />
@@ -43,7 +43,7 @@ export function FreeOpenSource() {
         >
           <div className="flex flex-col items-center gap-8 px-8">
             <div className="flex flex-col items-center gap-2">
-              <p className="text-caption font-mono font-semibold tracking-wide text-white">
+              <p className="text-caption font-mono tracking-wide text-white">
                 COMPLETELY FREE
               </p>
               <p className="text-price-display font-mono font-semibold text-white text-shadow-[0px_-5px_2px_rgba(0,0,0,0.3)]">

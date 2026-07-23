@@ -178,7 +178,7 @@ export function Features() {
     <section id="features" className="bg-bg-primary px-6 pt-24 pb-20 lg:px-20 lg:pt-[120px] lg:pb-20">
       <div className="wrap flex flex-col items-center gap-16 lg:gap-20">
         <div className="flex flex-col items-center gap-4 text-center">
-          <p className="text-caption font-mono font-semibold text-accent-default">FEATURES</p>
+          <p className="text-caption font-mono text-accent-default">FEATURES</p>
           <h2 className="text-[28px] leading-[1.2] font-semibold text-text-primary sm:text-[36px] lg:text-title-2">
             One Great Tool,
             <br />

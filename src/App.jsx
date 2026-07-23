@@ -5,6 +5,7 @@ import { Features } from './sections/Features'
 import { Personas } from './sections/Personas'
 import { FreeOpenSource } from './sections/FreeOpenSource'
 import { InstallSteps } from './sections/InstallSteps'
+import { Faq } from './sections/Faq'
 import { Footer } from './sections/Footer'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Personas />
         <FreeOpenSource />
         <InstallSteps />
+        <Faq />
       </main>
       <Footer />
     </div>

@@ -14,7 +14,7 @@ export function InstallSteps() {
     <section id="install" className="bg-bg-secondary px-6 py-16 lg:px-20 lg:py-[120px]">
       <div className="wrap flex flex-col items-center gap-10 lg:gap-12">
         <div className="flex flex-col items-center gap-4 text-center">
-          <p className="text-caption font-mono font-semibold text-accent-default">HOW TO INSTALL</p>
+          <p className="text-caption font-mono text-accent-default">HOW TO INSTALL</p>
           <h2 className="text-[28px] leading-[1.2] font-semibold text-text-primary sm:text-[36px] lg:text-title-2">
             Get started in a few
             <br />

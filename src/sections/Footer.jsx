@@ -2,6 +2,7 @@ import { CardShell } from '../components/CardShell'
 import { Button } from '../components/Button'
 import { DOWNLOAD_URL, GITHUB_REPO_URL, MIN_MACOS_VERSION } from '../config/release'
 import appIcon from '../assets/app-icon.png'
+import logoWordmark from '../assets/logo-wordmark.svg'
 import avatar from '../assets/avatar.png'
 
 const FOOTER_COLUMNS = [
@@ -57,7 +58,7 @@ export function Footer() {
               'radial-gradient(130% 130% at 50% 0%, #00FAFF 0%, #00CED2 25%, #00A2A5 50%, #007679 75%, #004A4C 100%)',
           }}
         >
-          <p className="text-caption font-mono font-semibold tracking-wide text-white uppercase">
+          <p className="text-caption font-mono tracking-wide text-white uppercase">
             Tiny WebP Converter
           </p>
           <h2 className="mt-2 text-[28px] leading-[1.2] font-semibold text-white sm:text-[36px] lg:text-title-2">
@@ -79,10 +80,7 @@ export function Footer() {
           <div className="flex max-w-[237px] flex-col gap-4">
             <div className="flex items-center gap-2.5">
               <img src={appIcon} alt="" className="size-10 rounded-[10px] object-cover" />
-              <span className="text-[14px] leading-[1.1] font-semibold text-text-primary">
-                <span className="block">Tiny WebP</span>
-                <span className="block">Converter</span>
-              </span>
+              <img src={logoWordmark} alt="Tiny WebP Converter" className="h-[26px] w-auto" />
             </div>
             <p className="text-body-sm text-text-secondary">
               Batch convert heavy images into light WebP or AVIF formats.

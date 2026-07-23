@@ -8,7 +8,7 @@ import { CardShell } from './CardShell'
 export function PersonaCard({ icon: Icon, title, description }) {
   return (
     <CardShell className="flex w-80 flex-col gap-4 bg-surface-secondary px-8 pt-12 pb-8">
-      <Icon size={56} className="text-accent-default" />
+      <Icon size={24} className="text-accent-default" />
       <p className="text-title-3 font-semibold text-text-primary">{title}</p>
       <p className="text-body-lg text-text-secondary">{description}</p>
     </CardShell>

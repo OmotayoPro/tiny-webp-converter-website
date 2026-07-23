@@ -3,6 +3,7 @@ import { Button } from './Button'
 import { MenuIcon, CloseIcon } from '../icons/MenuIcon'
 import { DOWNLOAD_URL, GITHUB_REPO_URL } from '../config/release'
 import appIcon from '../assets/app-icon.png'
+import logoWordmark from '../assets/logo-wordmark.svg'
 
 const LINKS = [
   { label: 'Features', href: '#features' },
@@ -21,13 +22,10 @@ export function Nav() {
 
   return (
     <header className="fixed top-10 left-1/2 z-50 -translate-x-1/2">
-      <nav className="flex items-center gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:gap-20">
+      <nav className="flex w-max items-center gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:gap-20">
         <a href="#hero" className="flex shrink-0 items-center gap-2.5">
           <img src={appIcon} alt="" className="size-10 rounded-[10px] object-cover" />
-          <span className="text-[14px] leading-[1.1] font-semibold text-text-primary">
-            <span className="block">Tiny WebP</span>
-            <span className="block">Converter</span>
-          </span>
+          <img src={logoWordmark} alt="Tiny WebP Converter" className="h-[26px] w-auto" />
         </a>
 
         <div className="hidden items-center gap-6 md:flex">
