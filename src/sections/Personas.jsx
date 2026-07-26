@@ -37,7 +37,7 @@ export function Personas() {
     <section className="bg-bg-secondary px-6 py-16 lg:px-20 lg:py-[120px]">
       <div className="wrap flex flex-col gap-10 lg:gap-16">
         <div className="flex flex-col gap-4">
-          <p className="text-caption font-mono font-semibold text-accent-default">WHO IS IT FOR</p>
+          <p className="text-caption font-mono text-accent-default">WHO IS IT FOR</p>
           <h2 className="text-[28px] leading-[1.2] font-semibold text-text-primary sm:text-[36px] lg:text-title-2">
             Tiny WebP Converter
             <br />

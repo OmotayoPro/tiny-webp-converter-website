@@ -32,11 +32,13 @@ const VARIANT_STYLES = {
 const SIZE_STYLES = {
   default: {
     radius: 'rounded-button',
+    padding: 'pl-6 pr-7 py-[15px]',
     iconSize: 20,
     text: 'text-button-label',
   },
   compact: {
     radius: 'rounded-button-sm',
+    padding: 'pl-4 pr-5 py-[9px]',
     iconSize: 15,
     text: 'text-[14px] leading-[1.1]', // no named style for this size yet — see note below
   },
@@ -79,10 +81,10 @@ export function Button({
 
   return (
     <Tag
-      className={`relative inline-flex items-center justify-center gap-2 overflow-hidden pl-6 pr-7 py-[15px] font-sans font-semibold ${s.radius} ${v.background} ${v.text} ${v.shadow} ${v.interaction} ${className}`}
+      className={`relative inline-flex shrink-0 items-center justify-center gap-2 overflow-hidden font-sans font-semibold ${s.radius} ${s.padding} ${v.background} ${v.text} ${v.shadow} ${v.interaction} ${className}`}
       {...props}
     >
-      {Icon && <Icon size={s.iconSize} className={v.glyphShadow} />}
+      {Icon && <Icon size={s.iconSize} className={`shrink-0 ${v.glyphShadow}`} />}
       <span className={`whitespace-nowrap ${s.text} ${v.textShadow}`}>{children}</span>
     </Tag>
   )
