@@ -27,7 +27,11 @@ function BatchConvertCard() {
 					"radial-gradient(130% 130% at 15% 8%, #009B9F 0%, #00696C 50%, #005052 75%, #003739 100%)",
 			}}
 		>
-			<img src={batchProductUi} alt="" className="absolute inset-0 size-full object-cover" />
+			<img
+				src={batchProductUi}
+				alt=""
+				className="absolute inset-0 size-full object-cover"
+			/>
 			<img
 				src={batchImageDrag}
 				alt=""
@@ -36,8 +40,8 @@ function BatchConvertCard() {
 			<div className="relative z-10 flex flex-col gap-2 pt-10 pr-10 pb-8 pl-10 lg:pr-[200px]">
 				<p className={CARD_TEXT_HEADING}>Batch Convert Images</p>
 				<p className={CARD_TEXT_BODY}>
-					Convert up to 50 images at once, processed in parallel. Switch between grid and list view,
-					and multi-select whatever you need.
+					Convert up to 50 images at once, processed in parallel. Switch between
+					grid and list view, and multi-select whatever you need.
 				</p>
 			</div>
 		</CardShell>
@@ -58,20 +62,22 @@ function FullControlCard() {
 				className="absolute inset-0 size-full object-cover"
 			/>
 			<img
-				src={fullcontrolGlow}
-				alt=""
-				className="absolute top-[-8px] right-0 w-[281px]"
-			/>
-			<img
 				src={fullcontrolControlsUi}
 				alt=""
 				className="absolute top-[62px] left-1/2 z-10 w-[276px] -translate-x-1/2"
 			/>
+
+			<img
+				src={fullcontrolGlow}
+				alt=""
+				className="absolute top-[-8px] right-0 z-20 w-[281px]"
+			/>
+
 			<div className="relative z-10 flex flex-col gap-2 pt-10 pr-10 pb-8 pl-10 lg:pr-[120px]">
 				<p className={CARD_TEXT_HEADING}>Full control</p>
 				<p className={CARD_TEXT_BODY}>
-					Adjust quality, flip on lossless mode, resize on the way out, and strip metadata
-					automatically.
+					Adjust quality, flip on lossless mode, resize on the way out, and
+					strip metadata automatically.
 				</p>
 			</div>
 		</CardShell>
@@ -99,8 +105,8 @@ function PrivateByDesignCard() {
 			<div className="relative z-10 flex flex-col gap-2 pt-10 pr-10 pb-8 pl-10 lg:pr-[120px]">
 				<p className={CARD_TEXT_HEADING}>Private by design</p>
 				<p className={CARD_TEXT_BODY}>
-					No accounts, no telemetry, no network calls. Every conversion happens right here on your
-					Mac.
+					No accounts, no telemetry, no network calls. Every conversion happens
+					right here on your Mac.
 				</p>
 			</div>
 		</CardShell>
@@ -116,17 +122,21 @@ function WebpAvifCard() {
 					"radial-gradient(130% 130% at 15% 8%, #0091FF 0%, #0075CD 25%, #00599C 50%, #003C6A 75%, #002E52 87.5%, #002039 100%)",
 			}}
 		>
-			<img src={webpavifProductUi} alt="" className="absolute inset-0 size-full object-cover" />
+			<img
+				src={webpavifProductUi}
+				alt=""
+				className="absolute inset-0 size-full object-cover"
+			/>
 			<img
 				src={webpavifOutput}
 				alt=""
-				className="absolute top-[52px] left-10 z-10 w-[266px]"
+				className="absolute top-[52px] left-10 z-10 w-[45%]"
 			/>
 			<div className="relative z-10 flex flex-col gap-2 pt-10 pr-10 pb-8 pl-10 lg:pr-[200px]">
 				<p className={CARD_TEXT_HEADING}>WebP &amp; AVIF output</p>
 				<p className={CARD_TEXT_BODY}>
-					Choose the modern format that fits your project — WebP for broad support, AVIF when you
-					want the smallest possible file.
+					Choose the modern format that fits your project — WebP for broad
+					support, AVIF when you want the smallest possible file.
 				</p>
 			</div>
 		</CardShell>
