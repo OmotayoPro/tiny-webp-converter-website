@@ -35,7 +35,9 @@
   /* Opacity is part of these values on purpose — see project notes on text-token tiering */
   --color-text-primary: rgb(255 255 255 / 90%);
   --color-text-secondary: rgb(255 255 255 / 60%);
-  --color-text-muted: rgb(255 255 255 / 40%);
+  /* 50% (not 40%) — 40% measured 3.82:1 on bg-primary, below WCAG AA's 4.5:1 floor for
+     13px caption text; 50% clears it at ~5.3:1 */
+  --color-text-muted: rgb(255 255 255 / 50%);
 
   /* ---- Fonts ---- */
   /* Real system fonts — resolve to true SF Pro / SF Mono on a Mac; Figma's own preview

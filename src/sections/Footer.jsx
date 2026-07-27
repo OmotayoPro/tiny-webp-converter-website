@@ -100,7 +100,7 @@ export function Footer() {
 						>
 							Download for macOS
 						</Button>
-						<p className="text-caption font-mono text-white/40">
+						<p className="text-caption font-mono text-text-muted">
 							{MIN_MACOS_VERSION} or later &middot; Free &middot; Open Source
 						</p>
 					</div>
