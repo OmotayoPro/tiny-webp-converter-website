@@ -77,8 +77,6 @@ export function FreeOpenSource() {
 							href={DOWNLOAD_URL}
 							variant="primary"
 							icon="apple"
-							target="_blank"
-							rel="noreferrer"
 						>
 							Download for macOS
 						</Button>

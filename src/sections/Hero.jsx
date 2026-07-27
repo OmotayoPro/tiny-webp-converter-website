@@ -49,8 +49,6 @@ export function Hero() {
 						href={DOWNLOAD_URL}
 						variant="primary"
 						icon="apple"
-						target="_blank"
-						rel="noreferrer"
 					>
 						Download for macOS
 					</Button>

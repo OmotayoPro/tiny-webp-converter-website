@@ -64,8 +64,6 @@ export function Nav() {
 					variant="primary"
 					size="compact"
 					icon="apple"
-					target="_blank"
-					rel="noreferrer"
 				>
 					Download
 				</Button>
