@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tinywebp.xyz/sitemap.xml
+Sitemap: https://www.tinywebp.xyz/sitemap.xml
