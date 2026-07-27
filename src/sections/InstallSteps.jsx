@@ -13,7 +13,7 @@ export function InstallSteps() {
 	return (
 		<section
 			id="install"
-			className="bg-bg-secondary px-6 py-16 lg:px-20 lg:py-[120px]"
+			className="scroll-mt-28 bg-bg-secondary px-6 py-16 lg:px-20 lg:py-[120px]"
 		>
 			<div className="wrap flex flex-col items-center gap-10 lg:gap-12">
 				<div className="flex flex-col items-center gap-4 text-center">

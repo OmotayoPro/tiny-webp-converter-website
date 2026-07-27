@@ -2,7 +2,7 @@ import { CardShell } from "../components/CardShell";
 import { Button } from "../components/Button";
 import { CheckmarkIcon } from "../icons/CheckmarkIcon";
 import { DOWNLOAD_URL, GITHUB_REPO_URL } from "../config/release";
-import noiseTexture from "../assets/noise-texture.png";
+import noiseTexture from "../assets/noise-texture.avif";
 
 const FEATURES = [
 	"Anywhere drag & drop",
@@ -24,7 +24,7 @@ export function FreeOpenSource() {
 	return (
 		<section
 			id="pricing"
-			className="bg-bg-primary px-6 py-16 lg:px-20 lg:py-[120px]"
+			className="scroll-mt-28 bg-bg-primary px-6 py-16 lg:px-20 lg:py-[120px]"
 		>
 			<div className="wrap flex flex-col items-center gap-10">
 				<div className="flex flex-col items-center gap-2 text-center">
@@ -50,7 +50,7 @@ export function FreeOpenSource() {
 					}}
 				>
 					<div
-						aria-hidde2
+						aria-hidden
 						className="pointer-events-none absolute inset-0 opacity-[0.03]"
 						style={{
 							backgroundImage: `url(${noiseTexture})`,
@@ -72,7 +72,14 @@ export function FreeOpenSource() {
 								inspect it, fork it, or send a PR
 							</p>
 						</div>
-						<Button as="a" href={DOWNLOAD_URL} variant="primary" icon="apple">
+						<Button
+							as="a"
+							href={DOWNLOAD_URL}
+							variant="primary"
+							icon="apple"
+							target="_blank"
+							rel="noreferrer"
+						>
 							Download for macOS
 						</Button>
 					</div>
@@ -96,6 +103,8 @@ export function FreeOpenSource() {
 					variant="secondary"
 					icon="github"
 					className="w-full max-w-[378px]"
+					target="_blank"
+					rel="noreferrer"
 				>
 					View on Github
 				</Button>

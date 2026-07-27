@@ -3,12 +3,20 @@ import { Button } from "../components/Button";
 import {
 	DOWNLOAD_URL,
 	GITHUB_REPO_URL,
+	LICENSE_URL,
+	RELEASE_NOTES_URL,
 	MIN_MACOS_VERSION,
 } from "../config/release";
+import { scrollToHash } from "../utils/scrollToHash";
 import appIcon from "../assets/app-icon.png";
 import logoWordmark from "../assets/logo-wordmark.svg";
 import avatar from "../assets/avatar.png";
-import noiseTexture from "../assets/noise-texture.png";
+import noiseTexture from "../assets/noise-texture.avif";
+
+const FIGMA_DESIGN_URL =
+	"https://www.figma.com/design/FAmhBZB0DXHMz7pMDZh2VV/Pro-Playground?node-id=217-6812&t=UEYwtJVzVKBxth8Q-1";
+const REPORT_BUGS_URL = "https://telegram.me/tywardaddy";
+const CREATOR_X_URL = "https://x.com/tywardaddy";
 
 const FOOTER_COLUMNS = [
 	{
@@ -23,16 +31,16 @@ const FOOTER_COLUMNS = [
 	{
 		heading: "Resources",
 		links: [
-			{ label: "Release Notes", href: "#" },
-			{ label: "Figma Design", href: "#" },
-			{ label: "GitHub", href: GITHUB_REPO_URL },
-			{ label: "MIT License", href: "#" },
+			{ label: "Release Notes", href: RELEASE_NOTES_URL, external: true },
+			{ label: "Figma Design", href: FIGMA_DESIGN_URL, external: true },
+			{ label: "GitHub", href: GITHUB_REPO_URL, external: true },
+			{ label: "MIT License", href: LICENSE_URL, external: true },
 		],
 	},
 	{
 		heading: "Contact",
 		links: [
-			{ label: "Report Bugs", href: "#" },
+			{ label: "Report Bugs", href: REPORT_BUGS_URL, external: true },
 			{ label: "Give Feedback", href: "#" },
 			{ label: "Buy Me Coffee", href: "#" },
 		],
@@ -48,9 +56,8 @@ const FOOTER_COLUMNS = [
 
 /**
  * Matches Figma's "Section 8 — Footer" (node 369:1372), which nests the Second CTA card at
- * the top. Several footer links (Release Notes, Figma Design, MIT License, Report Bugs, Give
- * Feedback, Buy Me Coffee, Privacy, Terms) don't have real destinations yet in Figma — left as
- * "#" placeholders, same TODO status as src/config/release.js.
+ * the top. Give Feedback, Buy Me Coffee, Privacy, and Terms don't have real destinations yet —
+ * left as "#" placeholders (pages to be built later).
  */
 export function Footer() {
 	return (
@@ -83,7 +90,14 @@ export function Footer() {
 						Same Image Quality.
 					</h2>
 					<div className="relative z-10 mt-6 flex flex-col items-center gap-[17px]">
-						<Button as="a" href={DOWNLOAD_URL} variant="primary" icon="apple">
+						<Button
+							as="a"
+							href={DOWNLOAD_URL}
+							variant="primary"
+							icon="apple"
+							target="_blank"
+							rel="noreferrer"
+						>
 							Download for macOS
 						</Button>
 						<p className="text-caption font-mono text-white/40">
@@ -127,6 +141,14 @@ export function Footer() {
 											as="a"
 											href={link.href}
 											variant="tertiary"
+											onClick={
+												link.href.startsWith("#") && link.href.length > 1
+													? (e) => scrollToHash(e, link.href)
+													: undefined
+											}
+											{...(link.external
+												? { target: "_blank", rel: "noreferrer" }
+												: {})}
 										>
 											{link.label}
 										</Button>
@@ -147,9 +169,14 @@ export function Footer() {
 							alt=""
 							className="size-6 rounded-full object-cover"
 						/>
-						<p className="text-body-lg font-medium text-text-primary">
+						<a
+							href={CREATOR_X_URL}
+							target="_blank"
+							rel="noreferrer"
+							className="text-body-lg font-medium text-text-primary transition-colors hover:text-accent-default"
+						>
 							Omotayo Taiwo
-						</p>
+						</a>
 					</div>
 					<p className="text-body-sm text-text-secondary">
 						&copy; 2026 Tiny WebP Converter. All rights reserved.

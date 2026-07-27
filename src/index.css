@@ -78,6 +78,10 @@
   --radius-icon: 1.625rem; /* 26px — app icon */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);

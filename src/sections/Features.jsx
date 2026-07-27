@@ -6,7 +6,7 @@ import fullcontrolControlsUi from "../assets/fullcontrol-controls-ui.png";
 import fullcontrolGlow from "../assets/fullcontrol-glow.png";
 import privateBackground from "../assets/private-background.png";
 import privateIcons from "../assets/private-icons.png";
-import webpavifProductUi from "../assets/webpavif-product-ui.png";
+import webpavifProductUi from "../assets/webpavif-product-ui.avif";
 import webpavifOutput from "../assets/webpavif-output.png";
 
 /**
@@ -147,7 +147,7 @@ export function Features() {
 	return (
 		<section
 			id="features"
-			className="bg-bg-primary px-6 pt-24 pb-20 lg:px-20 lg:pt-[120px] lg:pb-20"
+			className="scroll-mt-28 bg-bg-primary px-6 pt-24 pb-20 lg:px-20 lg:pt-[120px] lg:pb-20"
 		>
 			<div className="wrap flex flex-col items-center gap-16 lg:gap-20">
 				<div className="flex flex-col items-center gap-4 text-center">
