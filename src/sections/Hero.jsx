@@ -6,7 +6,7 @@ import { SecureIcon } from "../icons/SecureIcon";
 import { MoneyIcon } from "../icons/MoneyIcon";
 import { DOWNLOAD_URL, MIN_MACOS_VERSION } from "../config/release";
 import appIcon from "../assets/app-icon.png";
-import heroScreenshot from "../assets/hero-screenshot.png";
+import heroScreenshot from "../assets/hero-screenshot.avif";
 
 const FEATURES = [
 	{ Icon: BatchIcon, label: "Batch", color: "text-accent-success" },
@@ -44,7 +44,14 @@ export function Hero() {
 				</div>
 
 				<div className="flex flex-col items-center gap-[17px]">
-					<Button as="a" href={DOWNLOAD_URL} variant="primary" icon="apple">
+					<Button
+						as="a"
+						href={DOWNLOAD_URL}
+						variant="primary"
+						icon="apple"
+						target="_blank"
+						rel="noreferrer"
+					>
 						Download for macOS
 					</Button>
 					<p className="text-caption font-mono text-text-muted">

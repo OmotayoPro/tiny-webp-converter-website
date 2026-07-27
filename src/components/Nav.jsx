@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "./Button";
 import { MenuIcon, CloseIcon } from "../icons/MenuIcon";
 import { DOWNLOAD_URL, GITHUB_REPO_URL } from "../config/release";
+import { scrollToHash } from "../utils/scrollToHash";
 import appIcon from "../assets/app-icon.png";
 import logoWordmark from "../assets/logo-wordmark.svg";
 
@@ -9,7 +10,7 @@ const LINKS = [
 	{ label: "Features", href: "#features" },
 	{ label: "Pricing", href: "#pricing" },
 	{ label: "FAQ", href: "#faq" },
-	{ label: "GitHub", href: GITHUB_REPO_URL },
+	{ label: "GitHub", href: GITHUB_REPO_URL, external: true },
 ];
 
 /**
@@ -23,7 +24,11 @@ export function Nav() {
 	return (
 		<header className="fixed top-5 left-1/2 z-50 -translate-x-1/2">
 			<nav className="flex w-max items-center gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:gap-20">
-				<a href="#hero" className="flex shrink-0 items-center gap-2.5">
+				<a
+					href="#hero"
+					onClick={(e) => scrollToHash(e, "#hero")}
+					className="flex shrink-0 items-center gap-2.5"
+				>
 					<img
 						src={appIcon}
 						alt=""
@@ -38,7 +43,16 @@ export function Nav() {
 
 				<div className="hidden items-center gap-6 md:flex">
 					{LINKS.map((link) => (
-						<Button key={link.label} as="a" href={link.href} variant="tertiary">
+						<Button
+							key={link.label}
+							as="a"
+							href={link.href}
+							variant="tertiary"
+							onClick={
+								link.external ? undefined : (e) => scrollToHash(e, link.href)
+							}
+							{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+						>
 							{link.label}
 						</Button>
 					))}
@@ -50,6 +64,8 @@ export function Nav() {
 					variant="primary"
 					size="compact"
 					icon="apple"
+					target="_blank"
+					rel="noreferrer"
 				>
 					Download
 				</Button>
@@ -74,7 +90,11 @@ export function Nav() {
 								as="a"
 								href={link.href}
 								variant="tertiary"
-								onClick={() => setOpen(false)}
+								onClick={(e) => {
+									setOpen(false);
+									if (!link.external) scrollToHash(e, link.href);
+								}}
+								{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
 							>
 								{link.label}
 							</Button>

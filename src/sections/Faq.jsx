@@ -38,7 +38,7 @@ const FAQS = [
  */
 export function Faq() {
   return (
-    <section id="faq" className="bg-bg-tertiary px-6 py-16 lg:px-20 lg:py-[120px]">
+    <section id="faq" className="scroll-mt-28 bg-bg-tertiary px-6 py-16 lg:px-20 lg:py-[120px]">
       <div className="wrap flex flex-col items-center gap-10 lg:gap-12">
         <div className="flex flex-col items-center gap-4 text-center">
           <p className="text-caption font-mono text-accent-default">EXTRA INFORMATION</p>
