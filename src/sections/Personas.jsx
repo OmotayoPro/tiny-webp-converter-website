@@ -1,7 +1,10 @@
 /**
- * Matches Figma's "Section 4 — Persona Grid" (node 362:760). Desktop (lg+) keeps Figma's
- * fixed-width (320px), non-wrapping, horizontally-scrolling row. Below lg, cards go full-width
- * in a 2-column grid instead — Figma's row doesn't fit mobile viewports at all.
+ * Matches Figma's "Section 4 — Persona Grid" (node 362:760): a fixed-width (320px),
+ * non-wrapping, horizontally-scrolling row at every size. Below lg, the row also breaks out
+ * to the full viewport width (via the left-1/2/-translate-x-1/2 full-bleed trick, since the
+ * section's own padding would otherwise clip the "peek" of the next card) so cards can be
+ * swiped edge-to-edge; the scrollbar itself stays hidden since swipe/drag is the intended
+ * affordance here, not a visible track.
  */
 import { PersonaCard } from '../components/PersonaCard'
 import { DesignerIcon } from '../icons/DesignerIcon'
@@ -48,7 +51,7 @@ export function Personas() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 lg:flex lg:flex-row lg:overflow-x-auto">
+        <div className="scrollbar-hide relative left-1/2 flex w-screen -translate-x-1/2 gap-4 overflow-x-auto px-4 lg:static lg:left-auto lg:w-full lg:translate-x-0 lg:px-0">
           {PERSONAS.map((persona) => (
             <PersonaCard key={persona.title} {...persona} />
           ))}

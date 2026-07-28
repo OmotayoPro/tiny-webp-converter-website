@@ -22,8 +22,8 @@ export function Nav() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<header className="fixed top-5 left-1/2 z-50 -translate-x-1/2">
-			<nav className="flex w-max items-center gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:gap-20">
+		<header className="fixed top-5 inset-x-4 z-50 md:inset-x-auto md:left-1/2 md:-translate-x-1/2">
+			<nav className="flex w-full items-center justify-between gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:w-max md:gap-20">
 				<a
 					href="#hero"
 					onClick={(e) => scrollToHash(e, "#hero")}

@@ -59,7 +59,7 @@ export function LivePreview() {
           </p>
         </div>
 
-        <div className="relative mt-5 w-full max-w-[1040px] overflow-hidden rounded-[40px] bg-surface-secondary">
+        <div className="relative mt-5 w-full max-w-[1040px] overflow-hidden rounded-[24px] bg-surface-secondary sm:rounded-[40px]">
           <video
             ref={videoRef}
             src={livePreviewVideo}

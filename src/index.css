@@ -112,6 +112,17 @@ body {
   }
 }
 
+/* Hides the scrollbar on a scrollable element without disabling scroll — used for the
+   persona card row, which is meant to be swiped, not scrolled via a visible track. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /*
   Button gradients — kept as real CSS rather than Tailwind utilities because the hover
   state layers a second flat-white-wash gradient on top of the base one (see Figma

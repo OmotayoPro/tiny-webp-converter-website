@@ -20,7 +20,7 @@ export function Hero() {
 	return (
 		<section id="hero" className="bg-bg-primary pt-[190px]">
 			<div className="wrap flex flex-col items-center gap-10 text-center">
-				<div className="relative size-28 shrink-0 overflow-hidden rounded-[26px] shadow-[0px_0px_0px_8px_rgba(0,0,0,0.2)]">
+				<div className="relative size-[89.6px] shrink-0 overflow-hidden rounded-[26px] shadow-[0px_0px_0px_8px_rgba(0,0,0,0.2)] sm:size-28">
 					<div className="absolute inset-0 bg-[#f3f4f6]" />
 					<img
 						src={appIcon}
