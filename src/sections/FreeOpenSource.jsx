@@ -24,7 +24,7 @@ export function FreeOpenSource() {
 	return (
 		<section
 			id="pricing"
-			className="scroll-mt-28 bg-bg-primary px-6 py-16 lg:px-20 lg:py-[120px]"
+			className="scroll-mt-28 bg-bg-primary px-6 sm:px-0 py-16 lg:px-20 lg:py-[120px]"
 		>
 			<div className="wrap flex flex-col items-center gap-10">
 				<div className="flex flex-col items-center gap-2 text-center">
@@ -72,12 +72,7 @@ export function FreeOpenSource() {
 								inspect it, fork it, or send a PR
 							</p>
 						</div>
-						<Button
-							as="a"
-							href={DOWNLOAD_URL}
-							variant="primary"
-							icon="apple"
-						>
+						<Button as="a" href={DOWNLOAD_URL} variant="primary" icon="apple">
 							Download for macOS
 						</Button>
 					</div>

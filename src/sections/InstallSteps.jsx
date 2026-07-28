@@ -16,7 +16,7 @@ export function InstallSteps() {
 			className="scroll-mt-28 bg-bg-secondary px-6 py-16 lg:px-20 lg:py-[120px]"
 		>
 			<div className="wrap flex flex-col items-center gap-10 lg:gap-12">
-				<div className="flex flex-col items-center gap-4 text-center">
+				<div className="flex flex-col items-center gap-2 text-center">
 					<p className="text-caption font-mono text-accent-default">
 						HOW TO INSTALL
 					</p>

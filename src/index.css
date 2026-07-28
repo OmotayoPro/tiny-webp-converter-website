@@ -108,8 +108,19 @@ body {
 
 @media (max-width: 640px) {
   .wrap {
-    padding-inline: 24px;
+    padding-inline: 16px;
   }
+}
+
+/* Hides the scrollbar on a scrollable element without disabling scroll — used for the
+   persona card row, which is meant to be swiped, not scrolled via a visible track. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /*

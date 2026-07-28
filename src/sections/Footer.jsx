@@ -158,7 +158,7 @@ export function Footer() {
 				</div>
 
 				<div className="flex flex-col-reverse items-center gap-4 border-t border-white/20 py-6 sm:flex-row sm:justify-between">
-					<div className="flex items-center gap-2">
+					<div className="flex items-center gap-2 self-start sm:self-auto">
 						<p className="text-body-sm text-text-secondary">
 							Built with Passion by
 						</p>

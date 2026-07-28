@@ -22,8 +22,8 @@ export function Nav() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<header className="fixed top-5 left-1/2 z-50 -translate-x-1/2">
-			<nav className="flex w-max items-center gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:gap-20">
+		<header className="fixed top-5 inset-x-4 z-50 md:inset-x-auto md:left-1/2 md:-translate-x-1/2">
+			<nav className="flex w-full items-center justify-between gap-6 rounded-full bg-surface-secondary py-3.5 pr-4 pl-6 md:w-max md:gap-20">
 				<a
 					href="#hero"
 					onClick={(e) => scrollToHash(e, "#hero")}
@@ -58,15 +58,17 @@ export function Nav() {
 					))}
 				</div>
 
-				<Button
-					as="a"
-					href={DOWNLOAD_URL}
-					variant="primary"
-					size="compact"
-					icon="apple"
-				>
-					Download
-				</Button>
+				<div className="hidden md:block">
+					<Button
+						as="a"
+						href={DOWNLOAD_URL}
+						variant="primary"
+						size="compact"
+						icon="apple"
+					>
+						Download
+					</Button>
+				</div>
 
 				<button
 					type="button"
@@ -75,31 +77,36 @@ export function Nav() {
 					aria-label="Toggle menu"
 					aria-expanded={open}
 				>
-					{open ? <CloseIcon size={20} /> : <MenuIcon size={20} />}
+					{open ? <CloseIcon size={40} /> : <MenuIcon size={40} />}
 				</button>
 			</nav>
 
-			{open && (
-				<div className="absolute top-full left-1/2 mt-3 w-56 -translate-x-1/2 rounded-2xl bg-surface-secondary p-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25),0px_0px_0px_4px_rgba(0,0,0,0.25)] md:hidden">
-					<div className="flex flex-col items-start gap-4">
-						{LINKS.map((link) => (
-							<Button
-								key={link.label}
-								as="a"
-								href={link.href}
-								variant="tertiary"
-								onClick={(e) => {
-									setOpen(false);
-									if (!link.external) scrollToHash(e, link.href);
-								}}
-								{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
-							>
-								{link.label}
-							</Button>
-						))}
-					</div>
+			<div
+				aria-hidden={!open}
+				className={`absolute top-full left-0 mt-3 w-full origin-top rounded-2xl bg-surface-secondary p-4 transition-[opacity,transform] duration-200 ease-out md:hidden ${
+					open
+						? "pointer-events-auto translate-y-0 opacity-100"
+						: "pointer-events-none -translate-y-2 opacity-0"
+				}`}
+			>
+				<div className="flex flex-col items-start gap-4">
+					{LINKS.map((link) => (
+						<Button
+							key={link.label}
+							as="a"
+							href={link.href}
+							variant="tertiary"
+							onClick={(e) => {
+								setOpen(false);
+								if (!link.external) scrollToHash(e, link.href);
+							}}
+							{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+						>
+							{link.label}
+						</Button>
+					))}
 				</div>
-			)}
+			</div>
 		</header>
 	);
 }
