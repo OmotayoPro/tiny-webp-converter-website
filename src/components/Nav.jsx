@@ -81,27 +81,32 @@ export function Nav() {
 				</button>
 			</nav>
 
-			{open && (
-				<div className="absolute top-full left-1/2 mt-3 w-56 -translate-x-1/2 rounded-2xl bg-surface-secondary p-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25),0px_0px_0px_4px_rgba(0,0,0,0.25)] md:hidden">
-					<div className="flex flex-col items-start gap-4">
-						{LINKS.map((link) => (
-							<Button
-								key={link.label}
-								as="a"
-								href={link.href}
-								variant="tertiary"
-								onClick={(e) => {
-									setOpen(false);
-									if (!link.external) scrollToHash(e, link.href);
-								}}
-								{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
-							>
-								{link.label}
-							</Button>
-						))}
-					</div>
+			<div
+				aria-hidden={!open}
+				className={`absolute top-full left-0 mt-3 w-full origin-top rounded-2xl bg-surface-secondary p-4 transition-[opacity,transform] duration-200 ease-out md:hidden ${
+					open
+						? "pointer-events-auto translate-y-0 opacity-100"
+						: "pointer-events-none -translate-y-2 opacity-0"
+				}`}
+			>
+				<div className="flex flex-col items-start gap-4">
+					{LINKS.map((link) => (
+						<Button
+							key={link.label}
+							as="a"
+							href={link.href}
+							variant="tertiary"
+							onClick={(e) => {
+								setOpen(false);
+								if (!link.external) scrollToHash(e, link.href);
+							}}
+							{...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+						>
+							{link.label}
+						</Button>
+					))}
 				</div>
-			)}
+			</div>
 		</header>
 	);
 }

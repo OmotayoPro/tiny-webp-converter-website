@@ -58,7 +58,7 @@ export function Personas() {
 					</p>
 				</div>
 
-				<div className="scrollbar-hide relative left-1/2 flex w-screen -translate-x-1/2 gap-4 overflow-x-auto px-4 sm:w-[280px] lg:static lg:left-auto lg:w-full lg:translate-x-0 lg:px-0">
+				<div className="scrollbar-hide relative left-1/2 flex w-screen -translate-x-1/2 gap-4 overflow-x-auto px-4 lg:static lg:left-auto lg:w-full lg:translate-x-0 lg:px-0">
 					{PERSONAS.map((persona) => (
 						<PersonaCard key={persona.title} {...persona} />
 					))}
