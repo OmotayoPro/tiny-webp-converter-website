@@ -58,15 +58,17 @@ export function Nav() {
 					))}
 				</div>
 
-				<Button
-					as="a"
-					href={DOWNLOAD_URL}
-					variant="primary"
-					size="compact"
-					icon="apple"
-				>
-					Download
-				</Button>
+				<div className="hidden md:block">
+					<Button
+						as="a"
+						href={DOWNLOAD_URL}
+						variant="primary"
+						size="compact"
+						icon="apple"
+					>
+						Download
+					</Button>
+				</div>
 
 				<button
 					type="button"
@@ -75,7 +77,7 @@ export function Nav() {
 					aria-label="Toggle menu"
 					aria-expanded={open}
 				>
-					{open ? <CloseIcon size={20} /> : <MenuIcon size={20} />}
+					{open ? <CloseIcon size={40} /> : <MenuIcon size={40} />}
 				</button>
 			</nav>
 

@@ -108,7 +108,7 @@ body {
 
 @media (max-width: 640px) {
   .wrap {
-    padding-inline: 24px;
+    padding-inline: 16px;
   }
 }
 

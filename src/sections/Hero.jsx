@@ -66,7 +66,7 @@ export function Hero() {
 				/>
 			</div>
 
-			<div className="wrap mt-14 flex items-center justify-center gap-16 pb-24">
+			<div className="wrap mt-14 flex items-center justify-center gap-6 pb-24 sm:gap-16">
 				{FEATURES.map(({ Icon, label, color }) => (
 					<div key={label} className="flex flex-col items-center gap-2">
 						<div className="relative flex size-7 items-center justify-center rounded-lg bg-bg-secondary shadow-[0px_0px_0px_2px_rgba(0,0,0,0.25)]">

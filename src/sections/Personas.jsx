@@ -1,7 +1,7 @@
 /**
- * Matches Figma's "Section 4 — Persona Grid" (node 362:760). Cards are fixed-width (320px)
- * and don't wrap — matches Figma's overflow-clip row, so on narrower viewports it scrolls
- * horizontally rather than reflowing to a 2-column grid.
+ * Matches Figma's "Section 4 — Persona Grid" (node 362:760). Desktop (lg+) keeps Figma's
+ * fixed-width (320px), non-wrapping, horizontally-scrolling row. Below lg, cards go full-width
+ * in a 2-column grid instead — Figma's row doesn't fit mobile viewports at all.
  */
 import { PersonaCard } from '../components/PersonaCard'
 import { DesignerIcon } from '../icons/DesignerIcon'
@@ -48,7 +48,7 @@ export function Personas() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 overflow-x-auto lg:flex-row">
+        <div className="grid grid-cols-2 gap-4 lg:flex lg:flex-row lg:overflow-x-auto">
           {PERSONAS.map((persona) => (
             <PersonaCard key={persona.title} {...persona} />
           ))}
