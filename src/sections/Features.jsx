@@ -21,7 +21,7 @@ const CARD_TEXT_BODY = "text-body-sm text-text-secondary";
 function BatchConvertCard() {
 	return (
 		<CardShell
-			className="group flex h-[308px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[603px]"
+			className="group flex h-[400.4px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[603px]"
 			style={{
 				background:
 					"radial-gradient(130% 130% at 15% 8%, #009B9F 0%, #00696C 50%, #005052 75%, #003739 100%)",
@@ -51,7 +51,7 @@ function BatchConvertCard() {
 function FullControlCard() {
 	return (
 		<CardShell
-			className="flex h-[308px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[421px]"
+			className="flex h-[400.4px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[421px]"
 			style={{
 				background: "linear-gradient(180deg, #2b2b2b 0%, #1c1c1c 100%)",
 			}}
@@ -87,7 +87,7 @@ function FullControlCard() {
 function PrivateByDesignCard() {
 	return (
 		<CardShell
-			className="flex h-[308px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[428px]"
+			className="flex h-[400.4px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[428px]"
 			style={{
 				background: "linear-gradient(180deg, #2b2b2b 0%, #1c1c1c 100%)",
 			}}
@@ -116,7 +116,7 @@ function PrivateByDesignCard() {
 function WebpAvifCard() {
 	return (
 		<CardShell
-			className="flex h-[308px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[596px]"
+			className="flex h-[400.4px] w-full flex-col justify-end rounded-[24px]! sm:h-[520px] sm:rounded-[40px]! lg:w-[596px]"
 			style={{
 				background:
 					"radial-gradient(130% 130% at 15% 8%, #0091FF 0%, #0075CD 25%, #00599C 50%, #003C6A 75%, #002E52 87.5%, #002039 100%)",
