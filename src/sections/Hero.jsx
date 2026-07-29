@@ -44,14 +44,28 @@ export function Hero() {
 				</div>
 
 				<div className="flex flex-col items-center gap-[17px]">
-					<Button
-						as="a"
-						href={DOWNLOAD_URL}
-						variant="primary"
-						icon="apple"
-					>
-						Download for macOS
-					</Button>
+					<div className="flex flex-col items-center gap-4 sm:flex-row">
+						<Button
+							as="a"
+							href={DOWNLOAD_URL}
+							variant="primary"
+							icon="apple"
+						>
+							Download for macOS
+						</Button>
+						<a
+							href="https://www.producthunt.com/products/tinywebp-free-image-converter-for-mac?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-tinywebp-free-image-converter-for-mac"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1209543&theme=dark&t=1785310425116"
+								alt="TinyWebP — Free Image Converter for Mac - Convert large images into light-weight WebP and AVIF formats | Product Hunt"
+								width={250}
+								height={54}
+							/>
+						</a>
+					</div>
 					<p className="text-caption font-mono text-text-muted">
 						{MIN_MACOS_VERSION} or later &middot; Free &middot; Open Source
 					</p>
